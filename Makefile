@@ -1,4 +1,5 @@
-EXE=bin/main bin/wtf
+FILES=$(wildcard src/*.c)
+EXE=$(patsubst src/%.c, bin/%, $(FILES))
 
 .PHONY: all
 all: $(EXE)
