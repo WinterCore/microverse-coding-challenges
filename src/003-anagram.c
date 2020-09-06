@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
-#include <stdbool.h>
 
 int anagram(char *s);
 void char_count(char *s, int n, int *chars);

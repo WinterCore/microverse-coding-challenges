@@ -22,7 +22,7 @@ long repeated_string(char *s, long n) {
 
 size_t charncount(char *s, size_t n, char c) {
     size_t count = 0;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         if(s[i] == c)
             count += 1;
     }
