@@ -1,18 +1,11 @@
-CC     := gcc
-CFLAGS := -Wall -g
-TARGET := bin/main
+EXE=bin/main bin/wtf
 
-SRCS := $(wildcard src/*.c)
-# $(patsubst %.cpp,%.o,$(SRCS)): substitute all ".cpp" file name strings to ".o" file name strings
-OBJS := $(patsubst src/%.c,bin/%.o,$(SRCS))
+.PHONY: all
+all: $(EXE)
 
-all: $(TARGET)
-$(TARGET): $(OBJS)
-	$(CC) -o $@ $^
+bin/%: src/%.c
+	gcc -Wall -ggdb -o $@ $<
 
-bin/%.o: src/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+.PHONY: clean
 clean:
-	rm -rf $(TARGET) *.o
-
-.PHONY: all clean
+	rm -rfv $(EXE)
