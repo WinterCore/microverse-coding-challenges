@@ -5,7 +5,7 @@ EXE=$(patsubst src/%.c, bin/%, $(FILES))
 all: $(EXE)
 
 bin/%: src/%.c
-	gcc -Wall -ggdb -o $@ $<
+	gcc -Wall -ggdb -lm -o $@ $<
 
 .PHONY: clean
 clean:
